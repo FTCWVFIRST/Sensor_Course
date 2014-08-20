@@ -60,7 +60,7 @@ if (abs(joystick.joy1_y1) > 10) {
   	sPos = 250;
 	}
 
-   nxtDisplayTextLine (4, "Hey look at me!");
+   nxtDisplayTextLine (4, "Blah blah github");
 
    wait1Msec (5000);
 }
