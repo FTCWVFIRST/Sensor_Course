@@ -52,7 +52,7 @@ void leftTurn ()
 	nMotorEncoder[motorE] = 0;  //Clear the TETRIX encoders in motors D and E.
   nMotorEncoder[motorD] = 0;	//Robot should be at a complete stop before encoder reset.
 
-while (nMotorEncoder[motorE]>-1000){			//Robot value for left point turn.  Default value(-1000).
+while (nMotorEncoder[motorE]>-973){			//Robot value for left point turn.  Default value(-1000).
 																				//Value will change to account for changes in:
 																				//1.Wheelbase
 																				//2.Wheelsize
