@@ -6,12 +6,12 @@
 //Move Forward
 void moveForward (int move)
 {
-	move = move*61; // find conversion:    61 encoder counts = 1 cm  (200 used as place holder)
+	move = move*200; // find conversion:    ? encoder counts = 1 cm  (200 used as place holder)
 
 	nMotorEncoder[motorE] = 0;  //Clear the TETRIX encoders in motors D and E.
   nMotorEncoder[motorD] = 0;	//Robot should be at a complete stop before encoder reset.
 
-	while (nMotorEncoder[motorE] < move-100){ // Motors slowdown 100/4 = 25 degrees from stop position (Can be adjusted for either accuracy or speed)
+	while (nMotorEncoder[motorE] < move-200){ // Motors slowdown 200/4 = 50 degrees from stop position (Can be adjusted for either accuracy or speed)
 	motor[motorE] = 50;
 	motor[motorD] = 50;
 }
