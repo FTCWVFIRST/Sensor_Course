@@ -1,6 +1,9 @@
+#pragma config(Hubs,  S1, HTMotor,  HTServo,  none,     none)
+#pragma config(Motor,  mtr_S1_C1_1,     motorD,        tmotorTetrix, PIDControl, encoder)
+#pragma config(Motor,  mtr_S1_C1_2,     motorE,        tmotorTetrix, PIDControl, reversed, encoder)
 #pragma config(Sensor, S2,     eStopSwitch,    sensorTouch)
-//#Pragma statement included in main program code because RobotC would not associate the correct datatype
-//to the variable named "eStopSwitch" when called from the included eStop.c file.
+//#Pragma statements must be in main file not #pragma Statements
+
 #include "CalMove.c"
 //CalMove.c contains calibrated movement for the robot in fuctions: moveForward, rightTurn, and leftTurn
 #include "eStop.c"
