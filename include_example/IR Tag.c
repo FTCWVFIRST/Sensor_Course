@@ -14,25 +14,25 @@
 
 task main()
 {
-	repeat(forever)
+	while(1==1)
 	{
 
 		if(SensorValue(IRSeeker2) == 5)
 		{
-			motor[motorD] = 75;
-			motor[motorE] = 75;
+			motor[motorD] = 100;
+			motor[motorE] = 100;
 		}
 
 		if(SensorValue(IRSeeker2) > 5)
 		{
-			motor[motorD] = -50;
-			motor[motorE] = 50;
+			motor[motorD] = -25;
+			motor[motorE] = 25;
 		}
 
 		if(SensorValue(IRSeeker2) < 5)
 		{
-			motor[motorD] = 50;
-			motor[motorE] = -50;
+			motor[motorD] = 25;
+			motor[motorE] = -25;
 		}
 	}
 }
