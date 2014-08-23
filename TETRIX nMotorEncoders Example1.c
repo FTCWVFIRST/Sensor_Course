@@ -10,7 +10,29 @@
 //    2. Place the function into a conditional statement like a while loop.  Line 19
 //    3. Turn the motors off. Lines 25 and 26.
 
+void moveForward (int move)
+{
+	move = move*200; // find conversion:    ? encoder counts = 1 cm  (200 used as place holder)
+
+	nMotorEncoder[motorE] = 0;  //Clear the TETRIX encoders in motors D and E.
+  nMotorEncoder[motorD] = 0;	//Robot should be at a complete stop before encoder reset.
+
+	while (nMotorEncoder[motorE] < move-200){ // Motors slowdown 200/4 = 50 degrees from stop position (Can be adjusted for either accuracy or speed)
+	motor[motorE] = 50;
+	motor[motorD] = 50;
+}
+	while (nMotorEncoder[motorE] < move){ //Motors move at 10 percent power right before end of movement to improve accuracy.
+																				//Motor power can be used this low because of close loop PID control indicated in #pragma statement.
+	motor[motorE] = 10;
+	motor[motorD] = 10;
+}																			//Stop Motors
+	motor[motorE] = 0;
+	motor[motorD] = 0;
+	wait1Msec(200);									//Wait 2/10ths of a second to allow robot to reach a complete stop.
+}
+
 task main()
+
 {
   nMotorEncoder[motorE] = 0;  //clear the TETRIX encoders in motors D and E
   nMotorEncoder[motorD] = 0;
